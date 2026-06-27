@@ -1,3 +1,9 @@
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
 #Función para validar que el campo nombre no sea vacio y contenga al menos dos caracteres.
 def validar_nombre(valor):
     if not valor.strip():
@@ -56,7 +62,32 @@ def validar_formulario(datos):
         
     return erorres  
 
-        
+
+@app.route('/validar',methods=['POST']) 
+def validar():
+    datos = request.get_json()
+    errores = validar_formulario(datos)
+
+    if errores:
+        return jsonify({'ok':False,'errores':errores})
+
+    return jsonify({'ok':True,'mensaje':'Registro exitoso'})
+
+
+if __name__=='__main__':
+    app.run(debug=True)
+    
+
+
     
 
     
+
+
+
+
+
+
+#JSON
+
+

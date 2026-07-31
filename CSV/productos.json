@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Teclado mecánico",
+    "precio": 899.99,
+    "stock": 15
+  },
+  {
+    "id": 2,
+    "nombre": "Mouse inalámbrico",
+    "precio": 349.50,
+    "stock": 30
+  },
+  {
+    "id": 3,
+    "nombre": "Monitor 24 pulgadas",
+    "precio": 3199.00,
+    "stock": 8
+  },
+  {
+    "id": 4,
+    "nombre": "Audífonos USB",
+    "precio": 459.90,
+    "stock": 0
+  }
+]

@@ -58,8 +58,9 @@ class CuentaEmpresarial(CuentaBancaria):
         self.tipo_cuenta = "Cuenta empresarial nivel 1"
 
     def validarTipoCuenta(self):
-        if self.__saldo > 20000:
+        if self.saldo > 20000:
             self.tipo_cuenta = "Cuenta empresarial nivel 2"
+            print(self.tipo_cuenta)
         else:
             print(self.tipo_cuenta)
 
@@ -73,6 +74,10 @@ class CuentaEmpresarial(CuentaBancaria):
 
 
 cuenta_cesar = CuentaAhorro("Cesar Torres","757567765","German Torres")
+cuenta_cesar_empresarial = CuentaEmpresarial("Cesar Torres","757567765")
+cuenta_cesar_empresarial.depositar(40000)
+cuenta_cesar_empresarial.validarTipoCuenta()
+
 cuenta_cesar.depositar(2000)
 print(cuenta_cesar.calcularIntereses())
 

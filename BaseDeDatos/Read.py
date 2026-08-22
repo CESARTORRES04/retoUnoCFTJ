@@ -33,8 +33,18 @@ def listar_productos_precio_mayor_5000():
     cursor.close()
     conn.close()
 
+def listar_pedidos():
+    conn = get_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM pedidos")
+
+    for pedido in cursor.fetchall():
+        print(pedido)
+
+    cursor.close()
+    conn.close()
 
 
 if __name__ == "__main__":
-    print("Listar productos precio \n")
-    listar_productos_precio_mayor_5000()
+    print("Listar pedidos \n")
+    listar_pedidos()
